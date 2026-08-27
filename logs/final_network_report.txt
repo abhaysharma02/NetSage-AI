@@ -1,0 +1,344 @@
+======================================================================
+NETSAGE AI - NETWORK DIAGNOSTIC REPORT
+======================================================================
+
+Total Cases      : 30
+High Severity    : 16
+Medium Severity  : 11
+Low Severity     : 3
+Overall Status   : CRITICAL - Immediate attention required
+
+======================================================================
+
+Case ID : NET-001
+Symptom : PC1 cannot reach Server1 in VLAN 30
+----------------------------------------------------------------------
+Rule           : INTERFACE_DOWN
+Severity       : High
+Diagnosis      : Network connectivity issue
+Root Cause     : Administratively down interface
+Recommendation : Bring interface gigabitethernet0/0.10 up or configure it for standby
+Confidence     : 0.9
+
+
+Case ID : NET-002
+Symptom : PC2 assigned 169.254.x.x APIPA address
+----------------------------------------------------------------------
+Rule           : DHCP_POOL_EXHAUSTION
+Severity       : High
+Diagnosis      : DHCP Pool Exhaustion
+Root Cause     : Insufficient IP addresses in DHCP pool
+Recommendation : Increase the number of IP addresses in the DHCP pool or consider using a different IP address allocation method
+Confidence     : 0.9
+
+
+Case ID : NET-003
+Symptom : PC1 can ping 8.8.8.8 but cannot open google.com
+----------------------------------------------------------------------
+Rule           : DNS_CONFIGURATION
+Severity       : Medium
+Diagnosis      : DNS Resolution Issue
+Root Cause     : DNS resolver not configured or not functioning correctly
+Recommendation : Verify and configure the DNS resolver on PC1 to resolve the Google.com domain
+Confidence     : 0.8
+
+
+Case ID : NET-004
+Symptom : R1 and R2 fail to form OSPF adjacency
+----------------------------------------------------------------------
+Rule           : OSPF_TIMER_MISMATCH
+Severity       : High
+Diagnosis      : OSPF Timer Mismatch
+Root Cause     : Different OSPF hello intervals
+Recommendation : Verify OSPF configuration and adjust hello intervals to match
+Confidence     : 0.8
+
+
+Case ID : NET-005
+Symptom : Web server port 80 unreachable from Sales subnet
+----------------------------------------------------------------------
+Rule           : ACL_DENY
+Severity       : Medium
+Diagnosis      : ACL deny rule blocking required traffic
+Root Cause     : An ACL deny rule on the router affecting inbound traffic on port 80
+Recommendation : Verify and adjust ACL deny rules to allow required traffic on port 80
+Confidence     : 0.8
+
+
+Case ID : NET-006
+Symptom : Internal PCs cannot access external internet
+----------------------------------------------------------------------
+Rule           : NAT_OVERLOAD_MISSING
+Severity       : High
+Diagnosis      : NAT overload/PAT keyword is missing
+Root Cause     : Missing NAT overload/PAT configuration
+Recommendation : Enable NAT overload/PAT configuration for the affected network interface
+Confidence     : 0.9
+
+
+Case ID : NET-007
+Symptom : Guest Wi-Fi users can access internal private servers
+----------------------------------------------------------------------
+Rule           : GUEST_ACL_PERMISSIVE
+Severity       : High
+Diagnosis      : Guest VLAN ACL is overly permissive
+Root Cause     : Insufficient configuration of GUEST_ACL_PERMISSIVE rule
+Recommendation : Configure GUEST_ACL_PERMISSIVE rule to only allow necessary internal private server access
+Confidence     : 0.09
+
+
+Case ID : NET-008
+Symptom : Trunk link between SW1 and SW2 failing to carry VLAN 20 traffic
+----------------------------------------------------------------------
+Rule           : VLAN_MISSING_FROM_TRUNK
+Severity       : Medium
+Diagnosis      : VLAN 20 is missing from the trunk allowed list
+Root Cause     : Trunk configuration not properly updated
+Recommendation : Verify and update the trunk configuration to include VLAN 20 in the allowed list
+Confidence     : 0.9
+
+
+Case ID : NET-009
+Symptom : PC3 gets correct IP but cannot ping default gateway 192.168.1.1
+----------------------------------------------------------------------
+Rule           : HOST_GATEWAY_MISCONFIGURATION
+Severity       : High
+Diagnosis      : Incorrect default gateway configuration
+Root Cause     : Default gateway IP address is incorrect or not set
+Recommendation : Verify and correct the default gateway IP address on PC3
+Confidence     : 0.95
+
+
+Case ID : NET-010
+Symptom : Switch SW1 management interface unreachable via SSH
+----------------------------------------------------------------------
+Rule           : SVI_SHUTDOWN
+Severity       : Low
+Diagnosis      : Management SVI is administratively shut down
+Root Cause     : Configured to shutdown due to SVI_SHUTDOWN rule
+Recommendation : Enable management SVI or adjust SVI_SHUTDOWN rule
+Confidence     : 0.8
+
+
+Case ID : NET-011
+Symptom : PC1 and PC2 in VLAN 10 cannot ping each other across switch
+----------------------------------------------------------------------
+Rule           : INTER_SWITCH_ACCESS_MODE
+Severity       : High
+Diagnosis      : Inter-switch link is configured as access instead of trunk
+Root Cause     : Incorrect access mode setting
+Recommendation : Configure the inter-switch link as a trunk on both switches
+Confidence     : 0.09
+
+
+Case ID : NET-012
+Symptom : Branch router R2 missing routes to Head Office networks
+----------------------------------------------------------------------
+Rule           : OSPF_PASSIVE_LINK
+Severity       : High
+Diagnosis      : Branch router R2 is configured as an OSPF passive link, preventing it from learning and announcing its own network routes to the Head Office networks.
+Root Cause     : Incorrect OSPF configuration
+Recommendation : Change the OSPF configuration on Branch router R2 to remove the passive link and re-run OSPF
+Confidence     : 0.9
+
+
+Case ID : NET-013
+Symptom : Finance PC cannot access Finance Server in VLAN 40
+----------------------------------------------------------------------
+Rule           : WRONG_ACCESS_VLAN
+Severity       : Medium
+Diagnosis      : Incorrect VLAN assignment on switch port
+Root Cause     : Switch port is assigned to VLAN 40 instead of VLAN 10 where Finance Server resides
+Recommendation : Verify VLAN assignment on switch port and correct to VLAN 10
+Confidence     : 0.5
+
+
+Case ID : NET-014
+Symptom : DHCP Relay failing for remote branch subnet
+----------------------------------------------------------------------
+Rule           : DHCP_RELAY_HELPER_MISSING
+Severity       : High
+Diagnosis      : DHCP relay helper address missing
+Root Cause     : Missing IP helper address on the router or switch
+Recommendation : Configure IP helper address on the router or switch
+Confidence     : 0.9
+
+
+Case ID : NET-015
+Symptom : Static route traffic dropping intermittently
+----------------------------------------------------------------------
+Rule           : INVALID_STATIC_NEXT_HOP
+Severity       : High
+Diagnosis      : Static route next hop is unreachable
+Root Cause     : Missing or incorrect next-hop IP address in the static route configuration
+Recommendation : Verify the next-hop IP address in the static route configuration and ensure it is correct and reachable
+Confidence     : 0.9
+
+
+Case ID : NET-016
+Symptom : FTP connections to File Server timing out
+----------------------------------------------------------------------
+Rule           : FTP_CONTROL_PORT_MISSING
+Severity       : Medium
+Diagnosis      : FTP Connection Timing Out due to Missing FTP Control Port in ACL
+Root Cause     : Missing FTP control port 21 in the Access Control List (ACL) rule
+Recommendation : Add FTP control port 21 to the ACL rule to allow FTP connections
+Confidence     : 0.8
+
+
+Case ID : NET-017
+Symptom : Static NAT mapping for Internal Web Server not working
+----------------------------------------------------------------------
+Rule           : NAT_INSIDE_DIRECTION_MISSING
+Severity       : High
+Diagnosis      : Static NAT mapping for Internal Web Server not working due to missing NAT inside direction
+Root Cause     : NAT INSIDE DIRECTION MISSING ON INTERNAL INTERFACE
+Recommendation : Enable NAT INSIDE DIRECTION on the internal interface for the Internal Web Server
+Confidence     : 0.9
+
+
+Case ID : NET-018
+Symptom : Wireless clients unable to authenticate to WPA2 Enterprise
+----------------------------------------------------------------------
+Rule           : RADIUS_SECRET_MISMATCH
+Severity       : High
+Diagnosis      : RADIUS authentication failure due to mismatched RADIUS shared secret
+Root Cause     : RADIUS server configuration not synchronized with the authentication server
+Recommendation : Verify and synchronize RADIUS server configuration with the authentication server
+Confidence     : 0.09
+
+
+Case ID : NET-019
+Symptom : Native VLAN mismatch warnings flooding switch logs
+----------------------------------------------------------------------
+Rule           : NATIVE_VLAN_MISMATCH
+Severity       : Low
+Diagnosis      : Native VLAN mismatch warnings
+Root Cause     : Trunk peer configuration differs
+Recommendation : Verify and synchronize trunk peer native VLAN configurations
+Confidence     : 0.9
+
+
+Case ID : NET-020
+Symptom : PC unable to communicate with hosts outside local subnet
+----------------------------------------------------------------------
+Rule           : GATEWAY_OUTSIDE_SUBNET
+Severity       : High
+Diagnosis      : Insufficient or misconfigured default gateway
+Root Cause     : Client subnet does not have a default gateway within the same subnet
+Recommendation : Configure the default gateway to be within the client subnet
+Confidence     : 0.9
+
+
+Case ID : NET-021
+Symptom : OSPF route redistribution failing between OSPF and EIGRP
+----------------------------------------------------------------------
+Rule           : OSPF_REDISTRIBUTION_SUBNETS
+Severity       : Medium
+Diagnosis      :  OSPF route redistribution failed due to missing subnets option
+Root Cause     :  OSPF_REDISTRIBUTION_SUBNETS rule is not enabled
+Recommendation : Enable OSPF_REDISTRIBUTION_SUBNETS rule
+Confidence     : 0.7
+
+
+Case ID : NET-022
+Symptom : Users unable to reach external HTTPS sites
+----------------------------------------------------------------------
+Rule           : HTTPS_PORT_MISSING
+Severity       : Medium
+Diagnosis      : HTTPS Port Missing
+Root Cause     : ACL configuration lacks HTTPS port 443
+Recommendation : Allow HTTPS port 443 in ACL
+Confidence     : 0.9
+
+
+Case ID : NET-023
+Symptom : Duplicate IP address conflict detected on LAN
+----------------------------------------------------------------------
+Rule           : DUPLICATE_IP
+Severity       : High
+Diagnosis      : Duplicate IP Address Conflict
+Root Cause     : Insufficient IP Address Pool Size
+Recommendation : Increase IP address pool size or use IP address conservation techniques
+Confidence     : 0.09
+
+
+Case ID : NET-024
+Symptom : VTP updates not propagating across switches
+----------------------------------------------------------------------
+Rule           : VTP_DOMAIN_MISMATCH
+Severity       : Medium
+Diagnosis      : VTP domain name mismatch
+Root Cause     : Incorrect or inconsistent VTP domain name configuration
+Recommendation : Verify and synchronize VTP domain names across all switches
+Confidence     : 0.08
+
+
+Case ID : NET-025
+Symptom : Dynamic ARP Inspection (DAI) dropping legitimate traffic
+----------------------------------------------------------------------
+Rule           : DAI_TRUST_MISSING
+Severity       : High
+Diagnosis      : Dynamic ARP Inspection (DAI) is dropping legitimate traffic due to the uplink trunk not being configured as DAI trusted.
+Root Cause     : Uplink trunk configuration missing DAI trusted setting.
+Recommendation : Configure DAI trusted on the uplink trunk.
+Confidence     : 0.9
+
+
+Case ID : NET-026
+Symptom : Port Security putting switch port into err-disabled state
+----------------------------------------------------------------------
+Rule           : PORT_SECURITY_VIOLATION
+Severity       : Medium
+Diagnosis      : Port Security Misconfiguration
+Root Cause     : Inconsistent MAC address filtering
+Recommendation : Check and update MAC address lists in port security configuration
+Confidence     : 0.8
+
+
+Case ID : NET-027
+Symptom : HSRP Standby router continuously taking over Active role
+----------------------------------------------------------------------
+Rule           : HSRP_TIMER_MISMATCH
+Severity       : Medium
+Diagnosis      : HSRP Standby router continuously taking over Active role due to HSRP timer mismatch
+Root Cause     : Different HSRP hello timers detected: ['3', '10']
+Recommendation : Adjust HSRP hello timers to be the same on all routers in the HSRP group
+Confidence     : 0.9
+
+
+Case ID : NET-028
+Symptom : Router sub-interface encapsulation missing dot1q tag
+----------------------------------------------------------------------
+Rule           : DOT1Q_ENCAPSULATION_MISSING
+Severity       : High
+Diagnosis      : Router sub-interface encapsulation missing dot1q tag
+Root Cause     : Misconfigured router sub-interface
+Recommendation : Verify and update the sub-interface configuration to include the required 802.1Q encapsulation
+Confidence     : 0.09
+
+
+Case ID : NET-029
+Symptom : IPv6 SLAAC clients not receiving prefix information
+----------------------------------------------------------------------
+Rule           : IPV6_RA_SUPPRESSED
+Severity       : Medium
+Diagnosis      : IPv6 SLAAC clients not receiving prefix information due to suppressed IPv6 Router Advertisements
+Root Cause     : Network device or switch configuration issue
+Recommendation : Enable IPv6 Router Advertisements on the affected network device or switch
+Confidence     : 0.8
+
+
+Case ID : NET-030
+Symptom : CDP neighbor discovery failing between Cisco devices
+----------------------------------------------------------------------
+Rule           : CDP_DISABLED
+Severity       : Low
+Diagnosis      : CDP neighbor discovery failing due to CDP being disabled globally on the device.
+Root Cause     : Incorrect CDP settings on the device
+Recommendation : Enable CDP globally on the device.
+Confidence     : 0.9
+
+======================================================================
+NETSAGE AI REPORT GENERATION COMPLETED
+======================================================================

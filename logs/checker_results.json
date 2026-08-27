@@ -1,0 +1,332 @@
+[
+    {
+        "case_id": "NET-001",
+        "symptom": "PC1 cannot reach Server1 in VLAN 30",
+        "findings": [
+            {
+                "rule": "INTERFACE_DOWN",
+                "finding": "gigabitethernet0/0.10 is administratively down.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-002",
+        "symptom": "PC2 assigned 169.254.x.x APIPA address",
+        "findings": [
+            {
+                "rule": "DHCP_POOL_EXHAUSTION",
+                "finding": "DHCP pool has no available addresses.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-003",
+        "symptom": "PC1 can ping 8.8.8.8 but cannot open google.com",
+        "findings": [
+            {
+                "rule": "DNS_CONFIGURATION",
+                "finding": "DNS lookup/service configuration appears inactive.",
+                "severity": "Medium"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-004",
+        "symptom": "R1 and R2 fail to form OSPF adjacency",
+        "findings": [
+            {
+                "rule": "OSPF_TIMER_MISMATCH",
+                "finding": "Different OSPF hello intervals detected: ['10', '20'].",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-005",
+        "symptom": "Web server port 80 unreachable from Sales subnet",
+        "findings": [
+            {
+                "rule": "ACL_DENY",
+                "finding": "An ACL deny rule may be blocking required traffic.",
+                "severity": "Medium"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-006",
+        "symptom": "Internal PCs cannot access external internet",
+        "findings": [
+            {
+                "rule": "NAT_OVERLOAD_MISSING",
+                "finding": "NAT overload/PAT keyword is missing.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-007",
+        "symptom": "Guest Wi-Fi users can access internal private servers",
+        "findings": [
+            {
+                "rule": "GUEST_ACL_PERMISSIVE",
+                "finding": "Guest VLAN ACL is overly permissive and allows traffic to any destination.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-008",
+        "symptom": "Trunk link between SW1 and SW2 failing to carry VLAN 20 traffic",
+        "findings": [
+            {
+                "rule": "VLAN_MISSING_FROM_TRUNK",
+                "finding": "VLAN 20 is missing from the trunk allowed list.",
+                "severity": "Medium"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-009",
+        "symptom": "PC3 gets correct IP but cannot ping default gateway 192.168.1.1",
+        "findings": [
+            {
+                "rule": "HOST_GATEWAY_MISCONFIGURATION",
+                "finding": "Host has an incorrectly configured default gateway.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-010",
+        "symptom": "Switch SW1 management interface unreachable via SSH",
+        "findings": [
+            {
+                "rule": "SVI_SHUTDOWN",
+                "finding": "Management SVI appears to be administratively shut down.",
+                "severity": "Low"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-011",
+        "symptom": "PC1 and PC2 in VLAN 10 cannot ping each other across switch",
+        "findings": [
+            {
+                "rule": "INTER_SWITCH_ACCESS_MODE",
+                "finding": "Inter-switch link is configured as access instead of trunk.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-012",
+        "symptom": "Branch router R2 missing routes to Head Office networks",
+        "findings": [
+            {
+                "rule": "OSPF_PASSIVE_LINK",
+                "finding": "The active OSPF link is configured as passive.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-013",
+        "symptom": "Finance PC cannot access Finance Server in VLAN 40",
+        "findings": [
+            {
+                "rule": "WRONG_ACCESS_VLAN",
+                "finding": "Switch port is assigned to an incorrect access VLAN.",
+                "severity": "Medium"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-014",
+        "symptom": "DHCP Relay failing for remote branch subnet",
+        "findings": [
+            {
+                "rule": "DHCP_RELAY_HELPER_MISSING",
+                "finding": "DHCP relay is missing an IP helper address.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-015",
+        "symptom": "Static route traffic dropping intermittently",
+        "findings": [
+            {
+                "rule": "INVALID_STATIC_NEXT_HOP",
+                "finding": "Configured static-route next hop is unreachable.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-016",
+        "symptom": "FTP connections to File Server timing out",
+        "findings": [
+            {
+                "rule": "FTP_CONTROL_PORT_MISSING",
+                "finding": "FTP control port 21 is missing from the ACL rule.",
+                "severity": "Medium"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-017",
+        "symptom": "Static NAT mapping for Internal Web Server not working",
+        "findings": [
+            {
+                "rule": "NAT_INSIDE_DIRECTION_MISSING",
+                "finding": "NAT inside direction is missing on the internal interface.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-018",
+        "symptom": "Wireless clients unable to authenticate to WPA2 Enterprise",
+        "findings": [
+            {
+                "rule": "RADIUS_SECRET_MISMATCH",
+                "finding": "RADIUS shared secret configuration does not match.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-019",
+        "symptom": "Native VLAN mismatch warnings flooding switch logs",
+        "findings": [
+            {
+                "rule": "NATIVE_VLAN_MISMATCH",
+                "finding": "Native VLAN configuration differs between trunk peers.",
+                "severity": "Low"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-020",
+        "symptom": "PC unable to communicate with hosts outside local subnet",
+        "findings": [
+            {
+                "rule": "GATEWAY_OUTSIDE_SUBNET",
+                "finding": "Configured default gateway is outside the client subnet.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-021",
+        "symptom": "OSPF route redistribution failing between OSPF and EIGRP",
+        "findings": [
+            {
+                "rule": "OSPF_REDISTRIBUTION_SUBNETS",
+                "finding": "OSPF redistribution is missing the subnets option.",
+                "severity": "Medium"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-022",
+        "symptom": "Users unable to reach external HTTPS sites",
+        "findings": [
+            {
+                "rule": "HTTPS_PORT_MISSING",
+                "finding": "ACL permits HTTP but is missing HTTPS port 443.",
+                "severity": "Medium"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-023",
+        "symptom": "Duplicate IP address conflict detected on LAN",
+        "findings": [
+            {
+                "rule": "DUPLICATE_IP",
+                "finding": "Duplicate IP address detected in network evidence.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-024",
+        "symptom": "VTP updates not propagating across switches",
+        "findings": [
+            {
+                "rule": "VTP_DOMAIN_MISMATCH",
+                "finding": "VTP domain names do not match exactly.",
+                "severity": "Medium"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-025",
+        "symptom": "Dynamic ARP Inspection (DAI) dropping legitimate traffic",
+        "findings": [
+            {
+                "rule": "DAI_TRUST_MISSING",
+                "finding": "Uplink trunk is not configured as DAI trusted.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-026",
+        "symptom": "Port Security putting switch port into err-disabled state",
+        "findings": [
+            {
+                "rule": "PORT_SECURITY_VIOLATION",
+                "finding": "Port-security violation has been detected.",
+                "severity": "Medium"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-027",
+        "symptom": "HSRP Standby router continuously taking over Active role",
+        "findings": [
+            {
+                "rule": "HSRP_TIMER_MISMATCH",
+                "finding": "Different HSRP hello timers detected: ['3', '10'].",
+                "severity": "Medium"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-028",
+        "symptom": "Router sub-interface encapsulation missing dot1q tag",
+        "findings": [
+            {
+                "rule": "DOT1Q_ENCAPSULATION_MISSING",
+                "finding": "802.1Q encapsulation is missing from the router sub-interface.",
+                "severity": "High"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-029",
+        "symptom": "IPv6 SLAAC clients not receiving prefix information",
+        "findings": [
+            {
+                "rule": "IPV6_RA_SUPPRESSED",
+                "finding": "IPv6 Router Advertisements are suppressed.",
+                "severity": "Medium"
+            }
+        ]
+    },
+    {
+        "case_id": "NET-030",
+        "symptom": "CDP neighbor discovery failing between Cisco devices",
+        "findings": [
+            {
+                "rule": "CDP_DISABLED",
+                "finding": "CDP is disabled globally on the device.",
+                "severity": "Low"
+            }
+        ]
+    }
+]
